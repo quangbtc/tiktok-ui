@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
@@ -7,9 +8,18 @@ import {
     faMagnifyingGlass,
     faSpinner,
 } from '@fortawesome/free-solid-svg-icons';
+import Tippy from '@tippyjs/react/headless';
+import { Wrapper as WrapperPopper } from '~/components/Popper';
+import AccountItem from '../AccountItem';
 const cx = classNames.bind(styles);
 function Header() {
-    console.log(images.logo);
+    const [searchResult, setSearchResult] = useState([]);
+    useEffect(() => {
+        setTimeout(() => {
+            setSearchResult([12, 3, 5]);
+        }, 0);
+        return () => {};
+    }, []);
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -17,25 +27,45 @@ function Header() {
                 <div className={cx('logo')}>
                     <img src={images.logo} alt="logo" />
                 </div>
-                <div className={cx('search')}>
-                    <input
-                        type="text"
-                        placeholder="Search accounts and videos"
-                        spellCheck={false}
-                    />
-                    {/* clear */}
-                    <button className={cx('clear')}>
-                        <FontAwesomeIcon icon={faCircleXmark} />
-                    </button>
-                    <FontAwesomeIcon
-                        className={cx('spinner')}
-                        icon={faSpinner}
-                    />
-                    {/* loading */}
-                    <button className={cx('search-btn')}>
-                        <FontAwesomeIcon icon={faMagnifyingGlass} />
-                    </button>
-                </div>
+                <Tippy
+                    render={(attrs) => (
+                        <div
+                            className={cx('search-result')}
+                            tabIndex="-1"
+                            {...attrs}
+                        >
+                            <WrapperPopper>
+                                <h4 className={cx('search-title')}>Accounts</h4>
+                                <AccountItem />
+                                <AccountItem />
+                                <AccountItem />
+                            </WrapperPopper>
+                        </div>
+                    )}
+                    visible={searchResult.length > 0 ? true : false}
+                    interactive={true}
+                    placement={'bottom-start'}
+                >
+                    <div className={cx('search')}>
+                        <input
+                            type="text"
+                            placeholder="Search accounts and videos"
+                            spellCheck={false}
+                        />
+                        {/* clear */}
+                        <button className={cx('clear')}>
+                            <FontAwesomeIcon icon={faCircleXmark} />
+                        </button>
+                        <FontAwesomeIcon
+                            className={cx('spinner')}
+                            icon={faSpinner}
+                        />
+                        {/* loading */}
+                        <button className={cx('search-btn')}>
+                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                        </button>
+                    </div>
+                </Tippy>
                 <div className={cx('action')}></div>
             </div>
         </header>

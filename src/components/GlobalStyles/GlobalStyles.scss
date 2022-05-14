@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --primary-color: #fe2c55;
-    --white-color: #ffff;
-    --black-color: #0000;
-    /*default layout*/
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
+    --primary-color: #fe2c55;
+    --white-color: #ffff;
+    --black-color: #000;
+    --text-color: #333;
 }
 
 html {
@@ -24,7 +24,11 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
-button {
+button,
+input {
     outline: none;
     border: none;
+}
+a[href] {
+    color: var(--text-color);
 }

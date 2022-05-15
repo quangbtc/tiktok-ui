@@ -1,0 +1,89 @@
+.wrapper {
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    min-width: 100px;
+    cursor: pointer;
+    background-color: var(--white-color);
+    border: 1px solid transparent;
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+        user-select: none;
+    }
+}
+.wrapper + .wrapper {
+    margin-left: 16px;
+}
+//icon
+.icon + .icon-title,
+.icon-title + .icon {
+    margin-left: 12px;
+}
+
+.icon {
+    display: inline-block;
+    width: 28px;
+    text-align: center;
+}
+//Btn rounded
+.rounded {
+    border-radius: 999px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
+    cursor: pointer;
+    border-color: rgba(22, 24, 35, 0.12);
+    background-color: rgba(255, 255, 255, 1);
+    &:hover {
+        border-color: rgba(22, 24, 35, 0.2);
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+//Loại nút nhấn
+.primary {
+    min-width: 100px;
+    height: 36px;
+    background-color: var(--primary-color);
+    padding: 6px 8px;
+    color: var(--white-color);
+    font-weight: 700;
+    font-size: 1.6rem;
+    &:hover {
+        border-color: #fe2c55;
+        background: linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.06),
+                rgba(0, 0, 0, 0.06)
+            ),
+            #fe2c55;
+    }
+}
+.outline {
+    color: var(--primary-color);
+    border-color: currentColor;
+    &:hover {
+        border-color: currentColor;
+        background-color: rgba(254, 44, 85, 0.06);
+    }
+}
+.text {
+    &:hover {
+        text-decoration: underline;
+    }
+}
+//disable status
+//Size button
+.small {
+    min-width: 88px;
+    min-height: 28px;
+    padding: 4px 16px;
+}
+.large {
+    min-width: 168px;
+    min-height: 48px;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 600;
+    padding: 6px 8px;
+}

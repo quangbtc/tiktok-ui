@@ -8,4 +8,6 @@
     padding-bottom: 8px;
     overflow: hidden auto;
     max-height: min((100vh - 96px) - 60px, 734px);
+    display: flex;
+    flex-direction: column;
 }

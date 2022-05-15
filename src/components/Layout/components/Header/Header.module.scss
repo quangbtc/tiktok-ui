@@ -92,3 +92,15 @@
     font-weight: 600;
     color: rgba(22, 24, 35, 0.5);
 }
+//Action
+.action {
+    display: flex;
+    align-items: center;
+}
+//Menu
+.more-btn {
+    background: transparent;
+    margin-left: 28px;
+    font-size: 2rem;
+    padding: 0px 8px;
+}

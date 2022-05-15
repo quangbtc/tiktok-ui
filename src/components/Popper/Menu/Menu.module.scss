@@ -1,0 +1,20 @@
+.menu-list {
+    width: 223px;
+    padding: 8px 0px;
+    .wrapper-menu-item {
+        display: inline-flex;
+        justify-self: start;
+        margin-left: 0px;
+        width: 100%;
+        padding: 10px 16px;
+        font-size: 1.6rem;
+        font-weight: 400;
+        border-radius: 0;
+    }
+}
+//wrapper menu item
+.wrapper-menu-item {
+    &:hover {
+        background: rgba(22, 24, 35, 0.03);
+    }
+}

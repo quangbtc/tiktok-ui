@@ -5,21 +5,46 @@ import images from '~/assets/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCircleXmark,
+    faEarthAfrica,
+    faEllipsisVertical,
+    faKeyboard,
     faMagnifyingGlass,
+    faQuestion,
+    faSignIn,
     faSpinner,
 } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 import { Wrapper as WrapperPopper } from '~/components/Popper';
-import AccountItem from '../AccountItem';
+import AccountItem from '~/components/AccountItem';
+import Button from '~/components/Button';
+import Menu from '~/components/Popper/Menu';
+
 const cx = classNames.bind(styles);
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
     useEffect(() => {
         setTimeout(() => {
-            setSearchResult([12, 3, 5]);
+            setSearchResult([1, 2]);
         }, 0);
         return () => {};
     }, []);
+    const MENU_ITEMS = [
+        {
+            icon: <FontAwesomeIcon icon={faEarthAfrica} />,
+            title: 'English',
+            to: '',
+        },
+        {
+            icon: <FontAwesomeIcon icon={faQuestion} />,
+            title: 'Feedback and help',
+            to: '',
+        },
+        {
+            icon: <FontAwesomeIcon icon={faKeyboard} />,
+            title: 'Keyboard shortcuts',
+            to: '',
+        },
+    ];
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -66,7 +91,16 @@ function Header() {
                         </button>
                     </div>
                 </Tippy>
-                <div className={cx('action')}></div>
+                <div className={cx('action')}>
+                    <Button text>Upload</Button>
+                    <Button primary>Login</Button>
+
+                    <Menu listMenu={MENU_ITEMS}>
+                        <button className={cx('more-btn')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                        </button>
+                    </Menu>
+                </div>
             </div>
         </header>
     );

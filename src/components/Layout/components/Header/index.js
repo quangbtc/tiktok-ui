@@ -4,6 +4,7 @@ import styles from './Header.module.scss';
 import images from '~/assets/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
+    faAngleLeft,
     faCircleXmark,
     faEarthAfrica,
     faEllipsisVertical,
@@ -33,11 +34,28 @@ function Header() {
             icon: <FontAwesomeIcon icon={faEarthAfrica} />,
             title: 'English',
             to: '',
+            children: {
+                title: 'Languages',
+                data: [
+                    {
+                        title: 'English',
+                        code: 'en',
+                    },
+                    {
+                        title: 'VietNam',
+                        code: 'vi',
+                    },
+                    {
+                        title: 'China',
+                        code: 'cn',
+                    },
+                ],
+            },
         },
         {
             icon: <FontAwesomeIcon icon={faQuestion} />,
             title: 'Feedback and help',
-            to: '',
+            to: '/profile',
         },
         {
             icon: <FontAwesomeIcon icon={faKeyboard} />,
@@ -45,6 +63,9 @@ function Header() {
             to: '',
         },
     ];
+    const handleOnchangeMenu = (menuItem) => {
+        console.log(menuItem);
+    };
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -54,11 +75,7 @@ function Header() {
                 </div>
                 <Tippy
                     render={(attrs) => (
-                        <div
-                            className={cx('search-result')}
-                            tabIndex="-1"
-                            {...attrs}
-                        >
+                        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                             <WrapperPopper>
                                 <h4 className={cx('search-title')}>Accounts</h4>
                                 <AccountItem />
@@ -72,19 +89,12 @@ function Header() {
                     placement={'bottom-start'}
                 >
                     <div className={cx('search')}>
-                        <input
-                            type="text"
-                            placeholder="Search accounts and videos"
-                            spellCheck={false}
-                        />
+                        <input type="text" placeholder="Search accounts and videos" spellCheck={false} />
                         {/* clear */}
                         <button className={cx('clear')}>
                             <FontAwesomeIcon icon={faCircleXmark} />
                         </button>
-                        <FontAwesomeIcon
-                            className={cx('spinner')}
-                            icon={faSpinner}
-                        />
+                        <FontAwesomeIcon className={cx('spinner')} icon={faSpinner} />
                         {/* loading */}
                         <button className={cx('search-btn')}>
                             <FontAwesomeIcon icon={faMagnifyingGlass} />
@@ -95,7 +105,7 @@ function Header() {
                     <Button text>Upload</Button>
                     <Button primary>Login</Button>
 
-                    <Menu listMenu={MENU_ITEMS}>
+                    <Menu listMenu={MENU_ITEMS} onChange={handleOnchangeMenu}>
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
                         </button>

@@ -18,3 +18,25 @@
         background: rgba(22, 24, 35, 0.03);
     }
 }
+//Header
+.wrapper-header {
+    display: flex;
+    height: 50px;
+    margin-top: -8px;
+    position: relative;
+}
+.header-icon-back {
+    display: inline-block;
+    background-color: transparent;
+    width: 50px;
+    height: 100%;
+    cursor: pointer;
+}
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    line-height: 22px;
+    font-size: 1.6rem;
+    transform: translate(-50%, -50%);
+}

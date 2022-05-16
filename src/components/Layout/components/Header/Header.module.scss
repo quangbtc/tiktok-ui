@@ -20,79 +20,6 @@
     padding: 0px var(--header-spacer-left-right);
 }
 
-.search {
-    position: relative;
-    width: 361px;
-    height: var(--height-search-input);
-    background-color: rgba(22, 24, 35, 0.06);
-    border-radius: var(--border-radius-input);
-    display: flex;
-    align-items: center;
-    padding-left: 16px;
-    border: 1px solid transparent;
-    input {
-        height: 100%;
-        flex: 1;
-        font-size: 1.6rem;
-        font-weight: 400;
-        color: var(--black-color);
-        background-color: transparent;
-        caret-color: rgba(254, 44, 85, 1);
-    }
-    input:not(:placeholder-shown) ~ .search-btn {
-        color: rgba(22, 24, 35, 0.75);
-    }
-    &::after {
-        content: '';
-        position: absolute;
-        width: 1px;
-        height: calc(var(--height-search-input) - (var(--spacer-input) * 2));
-        top: var(--spacer-input);
-        right: var(--width-search-input);
-        background: rgba(22, 24, 35, 0.12);
-    }
-    &:focus-within {
-        border-color: rgba(22, 24, 35, 0.2);
-    }
-}
-.clear,
-.spinner {
-    position: absolute;
-    display: inline-block;
-    color: rgba(22, 24, 35, 0.34);
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-    margin: 0px 12px;
-    right: var(--width-search-input);
-}
-
-.search-btn {
-    height: 100%;
-    width: var(--width-search-input);
-    border-top-right-radius: var(--border-radius-input);
-    border-bottom-right-radius: var(--border-radius-input);
-    cursor: pointer;
-    font-size: 16px;
-    color: rgba(22, 24, 35, 0.34);
-    &:hover {
-        background: rgba(22, 24, 35, 0.03);
-    }
-    &:active {
-        background: rgba(22, 24, 35, 0.06);
-    }
-}
-.search-result {
-    width: 361px;
-}
-.search-title {
-    height: 30px;
-    padding: 5px 12px;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 600;
-    color: rgba(22, 24, 35, 0.5);
-}
 //Action
 .action {
     display: flex;
@@ -123,7 +50,7 @@
 .avatar {
     background: transparent;
     font-size: 2rem;
-    padding-left: 24px;
+    margin-left: 24px;
 }
 .avatar-account {
     width: 32px;

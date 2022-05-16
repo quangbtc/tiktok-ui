@@ -1,5 +1,4 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
     --default-layout-header-height: 60px;
@@ -14,8 +13,34 @@
 html {
     font-size: 62.5%;
 }
+//Fonts embed
+@font-face {
+    font-family: ProximaNova;
+    src: url(/assets/Fonts/Proxima-Nova-Regular.woff2);
+    font-weight: 500;
+}
+@font-face {
+    font-family: ProximaNova;
+    src: url(/assets/Fonts/Proxima-Nova-Semibold.woff2);
+    font-weight: 600;
+}
+@font-face {
+    font-family: SofiaPro;
+    src: url(/assets/Fonts/sofiapro-regular.woff);
+    font-weight: 400;
+}
+@font-face {
+    font-family: SofiaPro;
+    src: url(/assets/Fonts/sofiapro-medium.woff);
+    font-weight: 500;
+}
+@font-face {
+    font-family: SofiaPro;
+    src: url(/assets/Fonts/sofiapro-bold.woff);
+    font-weight: 700;
+}
 body {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'ProximaNova', sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;

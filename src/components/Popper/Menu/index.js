@@ -34,7 +34,7 @@ function Menu({ children, listMenu = [], onChange = defaultFn }) {
         <Tippy
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
-                    <WrapperPopper>
+                    <WrapperPopper className={cx('wrapper-menu')}>
                         {history.length > 1 && (
                             <Header
                                 title="Languages"

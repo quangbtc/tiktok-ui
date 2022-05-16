@@ -3,6 +3,7 @@
     border-radius: 4px;
     font-weight: 700;
     font-size: 1.6rem;
+    font-family: ProximaNova;
     line-height: 2.2rem;
     min-width: 100px;
     cursor: pointer;
@@ -51,12 +52,7 @@
     font-size: 1.6rem;
     &:hover {
         border-color: #fe2c55;
-        background: linear-gradient(
-                0deg,
-                rgba(0, 0, 0, 0.06),
-                rgba(0, 0, 0, 0.06)
-            ),
-            #fe2c55;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), #fe2c55;
     }
 }
 .outline {

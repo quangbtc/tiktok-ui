@@ -5,7 +5,6 @@ import images from '~/assets/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCircleXmark,
-    faCloudUpload,
     faCoins,
     faEarthAfrica,
     faEllipsisVertical,
@@ -17,7 +16,6 @@ import {
     faSpinner,
     faVideo,
 } from '@fortawesome/free-solid-svg-icons';
-import { faTelegram } from '@fortawesome/free-brands-svg-icons';
 
 import HeadlessTippy from '@tippyjs/react/headless';
 import Tippy from '@tippyjs/react';
@@ -26,8 +24,9 @@ import { Wrapper as WrapperPopper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
-import { faMessage, faUser } from '@fortawesome/free-regular-svg-icons';
-
+import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { UploadVideo, IconTelegram, IconMessages } from '~/components/Icons';
+import Image from '~/components/Image';
 const cx = classNames.bind(styles);
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
@@ -142,30 +141,32 @@ function Header() {
                 </HeadlessTippy>
                 {!!userLogin ? (
                     <div className={cx('action')}>
-                        <Tippy content="Upload videos">
+                        <Tippy content="Upload videos" delay={[0, 200]}>
                             <span className={cx('action-icon')}>
                                 {' '}
-                                <FontAwesomeIcon icon={faCloudUpload} />
+                                <UploadVideo />
                             </span>
                         </Tippy>
-                        <Tippy content="Messages">
+                        <Tippy content="Messages" delay={[0, 200]}>
                             <span className={cx('action-icon')}>
                                 {' '}
-                                <FontAwesomeIcon icon={faTelegram} />
+                                <IconTelegram />
                             </span>
                         </Tippy>
-                        <Tippy content="Inbox">
+                        <Tippy content="Inbox" delay={[0, 200]}>
                             <span className={cx('action-icon')}>
                                 {' '}
-                                <FontAwesomeIcon icon={faMessage} />
+                                <IconMessages />
+                                <span className={cx('amount-inbox')}>10</span>
                             </span>
                         </Tippy>
                         <Menu listMenu={LoginItems} onChange={handleOnchangeMenu}>
-                            <button className={cx('more-btn')}>
-                                <img
+                            <button className={cx('avatar')}>
+                                <Image
                                     className={cx('avatar-account')}
                                     src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/97752d453d18365d1888203fc13074b7~c5_300x300.webp?x-expires=1652706000&x-signature=GfXkaj3TRZ6MkZr1ljgL1WfCVCw%3D"
                                     alt="accountsName"
+                                    fallBack="https://thumbs.dreamstime.com/z/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.jpg"
                                 />
                             </button>
                         </Menu>

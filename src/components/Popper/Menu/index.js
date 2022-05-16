@@ -50,7 +50,7 @@ function Menu({ children, listMenu = [], onChange = defaultFn }) {
             delay={[0, 500]}
             interactive={true}
             placement={'bottom-end'}
-            visible
+            onHide={() => setHistory((prev) => prev.slice(0, 1))}
         >
             {children}
         </Tippy>

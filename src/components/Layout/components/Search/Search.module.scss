@@ -44,8 +44,17 @@
     margin: 0px 12px;
     right: var(--width-search-input);
 }
+
 .spinner {
-    display: none;
+    animation: rotation 0.8s linear infinite;
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .search-btn {
